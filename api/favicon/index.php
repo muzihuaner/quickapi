@@ -1,4 +1,12 @@
 <?php
+
+$counter = intval(file_get_contents("counter.dat"));  
+     $_SESSION['#'] = true;  
+     $counter++;  
+     $fp = fopen("counter.dat","w");  
+     fwrite($fp, $counter);  
+     fclose($fp); 
+
 header('Content-Type: image/x-icon');
 
 if (!isset($_GET['url'])) {

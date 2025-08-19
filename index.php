@@ -8,49 +8,202 @@
     <meta name="keywords" content="API接口,免费API,数据接口,接口服务,开发接口,接口调用">
     <!-- Bootstrap 5 CSS -->
     <link href="https://gcore.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     <style>
-        .api-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        :root {
+            --primary-color: #4361ee;
+            --secondary-color: #3f37c9;
+            --accent-color: #4cc9f0;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
         }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+        }
+        
+        .navbar {
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 4rem 0;
+            margin-bottom: 2rem;
+            border-radius: 0 0 1rem 1rem;
+        }
+        
+        .api-card {
+            transition: all 0.3s ease;
+            border: none;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
         .api-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
         }
+        
+        .card-text {
+            max-height: 100px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
+        
         .method-badge {
-            font-size: 0.8rem;
-            padding: 0.3rem 0.6rem;
+            font-weight: bold;
+            border-radius: 0.5rem;
+        }
+        
+        .btn-outline-primary {
+            border-radius: 0.5rem;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 2rem 0;
+        }
+        
+        .api-icon {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+        
+        .stats-card {
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .stats-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stats-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            color: white;
+            font-size: 1.5rem;
         }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));">
         <div class="container">
-            <a class="navbar-brand" href="/">快点API</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <a class="navbar-brand d-flex align-items-center" href="/">
+                <i class="bi bi-lightning-charge fs-3 me-2"></i>
+                <span class="fw-bold">快点API</span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="#">文档</a>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="#">首页</a>
+                    </li>
+                    <!-- <li class="nav-item mx-2">
+                        <a class="nav-link" href="#">API文档</a>
                     </li> -->
-                    <li class="nav-item">
+                    <!-- <li class="nav-item mx-2">
+                        <a class="nav-link" href="#">价格</a>
+                    </li> -->
+                    <li class="nav-item mx-2">
                         <a class="nav-link" href="#footer-about">关于</a>
                     </li>
+                    <!-- <li class="nav-item ms-2">
+                        <a class="btn btn-outline-light btn-sm" href="#">登录</a>
+                    </li> -->
                 </ul>
             </div>
         </div>
     </nav>
 
+    <div class="hero-section">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold mb-3">专业API接口服务平台</h1>
+            <p class="lead mb-4">提供稳定可靠的接口服务，助力开发者快速构建应用</p>
+            <!-- <div class="d-flex justify-content-center gap-3">
+                <button class="btn btn-light btn-lg px-4">开始使用</button>
+                <button class="btn btn-outline-light btn-lg px-4">查看文档</button>
+            </div> -->
+        </div>
+    </div>
+
     <div class="container">
+        <div class="row mb-5">
+            <div class="col-md-4 mb-4">
+                <div class="stats-card">
+                    <div class="feature-icon">
+                        <i class="bi bi-rocket"></i>
+                    </div>
+                    <div class="stats-number" id="api-count">0</div>
+                    <p class="mb-0">可用API接口</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="stats-card">
+                    <div class="feature-icon">
+                        <i class="bi bi-lightning"></i>
+                    </div>
+                    <div class="stats-number">100K+</div>
+                    <p class="mb-0">日调用次数</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="stats-card">
+                    <div class="feature-icon">
+                        <i class="bi bi-shield-check"></i>
+                    </div>
+                    <div class="stats-number">99.9%</div>
+                    <p class="mb-0">服务可用性</p>
+                </div>
+            </div>
+        </div>
+
         <div class="row mb-4">
             <div class="col-lg-8">
-                <h1 class="mb-3">API接口列表</h1>
+                <h2 class="mb-3">API接口列表</h2>
                 <p class="text-muted">提供各类实用API接口服务，支持多种应用场景</p>
             </div>
             <div class="col-lg-4 d-flex align-items-end justify-content-lg-end">
-                <div class="badge bg-secondary">
-                    共 <span id="api-count">0</span> 个API接口
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="搜索API..." id="search-api">
+                    <button class="btn btn-outline-primary" type="button">
+                        <i class="bi bi-search"></i>
+                    </button>
                 </div>
             </div>
         </div>
@@ -101,15 +254,15 @@
                                 <small><i class="bi bi-eye"></i> 调用次数: <?php echo $callCount; ?></small>
                             </p>
                             
-                            <button class="btn btn-sm btn-outline-secondary mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#<?php echo $apiId; ?>" aria-expanded="false">
-                                查看描述
-                            </button>
-                            
-                            <div class="collapse mt-3" id="<?php echo $apiId; ?>">
-                                <div class="card card-body p-3 bg-light">
-                                    <h6 class="card-subtitle mb-2 text-muted">接口描述</h6>
-                                    <p class="card-text"><?php echo htmlspecialchars($api['description']); ?></p>
-                                     
+                            <div class="mt-3">
+                                <h6 class="card-subtitle mb-2 text-muted">接口描述</h6>
+                                <p class="card-text"><?php echo htmlspecialchars($api['description']); ?></p>
+                                
+                                <button class="btn btn-sm btn-outline-primary mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#<?php echo $apiId; ?>-details" aria-expanded="false" aria-controls="<?php echo $apiId; ?>-details">
+                                    查看详情
+                                </button>
+                                
+                                <div class="collapse" id="<?php echo $apiId; ?>-details">
                                     <?php if (!empty($api['params'])): ?>
                                     <div class="mt-3">
                                         <h6 class="card-subtitle mb-2 text-muted">请求参数</h6>
@@ -150,49 +303,62 @@
         </div>
     </div>
 
-    <footer class="bg-light py-4 mt-5">
+    <footer class="footer mt-5">
         <div class="container">
             <div class="row">
                 <div class="col-md-4 mb-4" id="footer-about">
-
-                    <h5 class="text-primary">关于我们</h5>
-                    <p class="text-muted small">专业API接口服务平台，提供稳定可靠的接口服务</p>
-                    <div class="text-muted small">
+                    <h5 class="text-white mb-3">关于我们</h5>
+                    <p class="text-light">专业API接口服务平台，提供稳定可靠的接口服务，助力开发者快速构建应用。</p>
+                    <div class="text-light">
                         <div>© <?php echo date('Y'); ?> 快点API</div>
                     </div>
                 </div>
-                <!-- <div class="col-md-4 mb-4">
-                    <h5 class="text-primary">服务支持</h5>
-                    <ul class="list-unstyled small">
-                        <li><a href="/service" class="text-muted text-decoration-none">服务条款</a></li>
-                        <li><a href="/privacy" class="text-muted text-decoration-none">隐私政策</a></li>
-                        <li><a href="/contact" class="text-muted text-decoration-none">联系我们</a></li>
+                <div class="col-md-4 mb-4">
+                    <h5 class="text-white mb-3">快速链接</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none">API文档</a></li>
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none">使用教程</a></li>
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none">价格方案</a></li>
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none">联系我们</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4 mb-4">
-                    <h5 class="text-primary">合作伙伴</h5>
-                    <ul class="list-unstyled small">
-                        <li><a href="https://beian.miit.gov.cn" class="text-muted text-decoration-none" target="_blank">工信部备案查询</a></li>
-                        <li><a href="https://www.aliyun.com" class="text-muted text-decoration-none" target="_blank">阿里云</a></li>
-                        <li><a href="https://cloud.tencent.com" class="text-muted text-decoration-none" target="_blank">腾讯云</a></li>
+                    <h5 class="text-white mb-3">联系方式</h5>
+                    <ul class="list-unstyled text-light">
+                        <li class="mb-2"><i class="bi bi-envelope me-2"></i> admin@huangetech.com</li>
                     </ul>
-                </div> -->
-            </div>
-            <div class="text-center text-muted small mt-4" >
-                本站API接口数据来源于公开网络，仅用于技术研究用途
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <!-- Bootstrap 5 JS -->
     <script src="https://gcore.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     <script>
-        // 设置API数量
+        // 更新API计数
         document.addEventListener('DOMContentLoaded', function() {
-            const apiCount = <?php echo count($apis); ?>;
+            const apiCount = document.querySelectorAll('.api-card').length;
             document.getElementById('api-count').textContent = apiCount;
+
+            // 添加搜索功能
+            const searchInput = document.getElementById('search-api');
+            const apiCards = document.querySelectorAll('.api-card');
+            
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                
+                apiCards.forEach(card => {
+                    const apiName = card.querySelector('.card-title').textContent.toLowerCase();
+                    const apiDescription = card.querySelector('.card-text').textContent.toLowerCase();
+                    const apiUrl = card.querySelector('.text-muted small').textContent.toLowerCase();
+                    
+                    if (apiName.includes(searchTerm) || apiDescription.includes(searchTerm) || apiUrl.includes(searchTerm)) {
+                        card.closest('.col-md-6').style.display = '';
+                    } else {
+                        card.closest('.col-md-6').style.display = 'none';
+                    }
+                });
+            });
         });
     </script>
 </body>

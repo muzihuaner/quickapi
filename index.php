@@ -258,9 +258,11 @@
                                 <h6 class="card-subtitle mb-2 text-muted">接口描述</h6>
                                 <p class="card-text"><?php echo htmlspecialchars($api['description']); ?></p>
                                 
+                                <?php if (!empty($api['params'])): ?>
                                 <button class="btn btn-sm btn-outline-primary mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#<?php echo $apiId; ?>-details" aria-expanded="false" aria-controls="<?php echo $apiId; ?>-details">
-                                    查看详情
+                                    查看请求参数
                                 </button>
+                                <?php endif; ?>
                                 
                                 <div class="collapse" id="<?php echo $apiId; ?>-details">
                                     <?php if (!empty($api['params'])): ?>

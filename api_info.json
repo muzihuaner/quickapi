@@ -173,6 +173,26 @@
       "params": []
     },
     {
+      "name": "IP地址查询",
+      "description": "查询IP地址的地理位置信息",
+      "path": "/api/ip/index.php",
+      "method": "GET",
+      "params": [
+        {
+          "name": "ip",
+          "type": "string",
+          "required": false,
+          "description": "要查询的IP地址，不提供则查询访问者IP"
+        },
+        {
+          "name": "callback",
+          "type": "string",
+          "required": false,
+          "description": "JSONP回调函数名"
+        }
+      ]
+    },
+    {
       "name": "Minecraft服务器状态查询",
       "description": "查询Minecraft Java版服务器状态信息",
       "path": "/api/mcstatus/index.php",
@@ -183,6 +203,32 @@
           "type": "string",
           "required": true,
           "description": "Minecraft服务器地址"
+        }
+      ]
+    },
+    {
+      "name": "网易云音乐随机歌曲",
+      "description": "获取网易云音乐随机歌曲，支持不同榜单和格式",
+      "path": "/api/wyy/index.php",
+      "method": "GET",
+      "params": [
+        {
+          "name": "sort",
+          "required": false,
+          "type": "string",
+          "description": "选择输出分类[热歌榜|新歌榜|飙升榜|抖音榜|电音榜]，为空输出热歌榜"
+        },
+        {
+          "name": "mid",
+          "required": false,
+          "type": "int",
+          "description": "网易云歌单ID"
+        },
+        {
+          "name": "format",
+          "required": false,
+          "type": "string",
+          "description": "选择输出格式[json|mp3]"
         }
       ]
     }

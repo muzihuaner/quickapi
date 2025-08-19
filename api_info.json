@@ -1,0 +1,184 @@
+{
+  "apis": [
+    {
+      "name": "Bing 每日壁纸",
+      "description": "获取Bing每日图片接口，返回当日Bing首页背景图片",
+      "path": "/api/bing/index.php",
+      "method": "GET",
+      "params": []
+    },
+    {
+      "name": "抖音视频图集去水印",
+      "description": "通过抖音视频分享链接获取视频信息，返回标题、封面和播放地址",
+      "path": "/api/douyin/index.php",
+      "method": "GET",
+      "params": [
+        {
+          "name": "url",
+          "type": "string",
+          "required": true,
+          "description": "抖音视频分享链接"
+        }
+      ]
+    },
+    {
+      "name": "短链接还原",
+      "description": "短链接还原",
+      "path": "/api/dwzrec/index.php",
+      "method": "GET",
+      "params": [
+        {
+          "name": "url",
+          "type": "string",
+          "required": true,
+          "description": "长链接"
+        }
+      ]
+    },
+    {
+      "name": "网站图标获取",
+      "description": "通过网站域名获取其favicon.ico图标，优先尝试HTTPS，失败时回退到HTTP",
+      "path": "/api/favicon/index.php",
+      "method": "GET",
+      "params": [
+        {
+          "name": "url",
+          "type": "string",
+          "required": true,
+          "description": "目标网站域名（不需要包含http://或https://）"
+        }
+      ]
+    },
+    {
+      "name": "IP签名档",
+      "description": "获取客户端、IP地址等信息，以图片显示",
+      "path": "/api/ipinfo/index.php",
+      "method": "GET",
+      "params": []
+    },
+    {
+      "name": "历史上的今天",
+      "description": "获取当天历史上发生的重要事件",
+      "path": "/api/lishi/index.php",
+      "method": "GET",
+      "params": []
+    },
+    {
+      "name": "QQ头像获取",
+      "description": "通过QQ号码获取用户头像（100像素尺寸）",
+      "path": "/api/qqimg/index.php",
+      "method": "GET",
+      "params": [
+        {
+          "name": "qq",
+          "type": "number",
+          "required": true,
+          "description": "用户QQ号码"
+        }
+      ]
+    },
+    {
+      "name": "QQ在线状态查询",
+      "description": "获取指定QQ号的电脑在线状态",
+      "path": "/api/qqzx/index.php",
+      "method": "GET",
+      "params": [
+        {
+          "name": "qq",
+          "type": "number",
+          "required": true,
+          "description": "用户QQ号码"
+        }
+      ]
+    },
+    {
+      "name": "一言语录",
+      "description": "随机获取一句经典语录，支持多平台调用",
+      "path": "/api/yiyan/index.php",
+      "method": "GET",
+      "params": []
+    },
+    {
+      "name": "二维码生成",
+      "description": "生成指定内容的二维码图片接口",
+      "path": "/api/qrcode/index.php",
+      "method": "GET",
+      "params": [
+        {
+          "name": "text",
+          "type": "string",
+          "required": true,
+          "description": "需要生成二维码的文本内容"
+        }
+      ]
+    },
+    {
+      "name": "随机壁纸",
+      "description": "获取随机壁纸图片接口",
+      "path": "/api/sjbz/index.php",
+      "method": "GET",
+      "params": [
+        {
+          "name": "method",
+          "required": false,
+          "type": "string",
+          "description": "输出壁纸端[mobile|pc|zsy]默认为pc"
+        },
+        {
+          "name": "lx",
+          "required": false,
+          "type": "string",
+          "description": "选择输出分类[meizi|dongman|fengjing|suiji]，为空随机输出"
+        },
+        {
+          "name": "format",
+          "required": false,
+          "type": "string",
+          "description": "输出壁纸格式[json|images]默认为images"
+        }
+      ]
+    },
+    {
+      "name": "身份证号信息查询",
+      "description": "查询身份证号码信息",
+      "path": "/api/sfz/index.php",
+      "method": "GET",
+      "params": [
+        {
+          "name": "card",
+          "type": "string",
+          "required": true,
+          "description": "身份证号码"
+        }
+      ]
+    },
+    {
+      "name": "知乎日报",
+      "description": "每天 3 次，每次 7 分钟",
+      "path": "/api/zhihu/index.php",
+      "method": "GET",
+      "params": []
+    },
+    {
+      "name": "每日60s",
+      "description": "60s，知天下事",
+      "path": "/api/60s/index.php",
+      "method": "GET",
+      "params": []
+    },
+    {
+      "name": "Minecraft服务器状态查询",
+      "description": "查询Minecraft Java版服务器状态信息",
+      "path": "/api/mcstatus/index.php",
+      "method": "GET",
+      "params": [
+        {
+          "name": "host",
+          "type": "string",
+          "required": true,
+          "description": "Minecraft服务器地址"
+        }
+      ]
+    }
+  ]
+}

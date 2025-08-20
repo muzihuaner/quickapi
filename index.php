@@ -315,7 +315,7 @@
                         <div>© <?php echo date('Y'); ?> 快点API</div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
+                <div class="col-md-2 mb-4">
                     <h5 class="text-white mb-3">快速链接</h5>
                     <ul class="list-unstyled">
                         <li class="mb-2"><a href="#" class="text-light text-decoration-none">API文档</a></li>
@@ -324,7 +324,15 @@
                         <li class="mb-2"><a href="#" class="text-light text-decoration-none">联系我们</a></li>
                     </ul>
                 </div>
-                <div class="col-md-4 mb-4">
+                <div class="col-md-3 mb-4">
+                    <h5 class="text-white mb-3">友情链接</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="https://quickso.cn" class="text-light text-decoration-none">快点搜</a></li>
+                        <li class="mb-2"><a href="https://zhiurl.cn" class="text-light text-decoration-none">知链短链接</a></li>
+                        <li class="mb-2"><a href="https://huancloud.cn" class="text-light text-decoration-none">欢云</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mb-4">
                     <h5 class="text-white mb-3">联系方式</h5>
                     <ul class="list-unstyled text-light">
                         <li class="mb-2"><i class="bi bi-envelope me-2"></i> admin@huangetech.com</li>
